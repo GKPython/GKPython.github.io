@@ -2212,7 +2212,14 @@
     <url>/2020/04/19/pagePython10hangnenggansha/</url>
     <content><![CDATA[<p>转自CSDN。 以下文章来源于ZackSock ，作者ZackSock </p>
 <p>Python凭借其简洁的代码，赢得了许多开发者的喜爱。因此也就促使了更多开发者用Python开发新的模块，从而形成良性循环，Python可以凭借更加简短的代码实现许多有趣的操作。下面我们来看看，我们用不超过10行代码能实现些什么有趣的功能。</p>
-<h4 id="1-生成二维码"><a href="#1-生成二维码" class="headerlink" title="1 生成二维码"></a>1 生成二维码</h4><p>二维码作为一种信息传递的工具，在当今社会发挥了重要作用。而生成一个二维码也非常简单，在Python中我们可以通过MyQR模块了生成二维码，而生成一个二维码我们只需要2行代码，我们先安装MyQR模块，这里选用国内的源下载。<br>    pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a> myqr<br>安装完成后我们就可以开始写代码了：<br>    from MyQR import myqr    # 注意大小写<br>    myqr.run(words=’<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">http://www.baidu.com&#39;</a>)    # 如果为网站则会自动跳转，文本直接显示，不支持中文<br>我们执行代码后会在项目下生成一张二维码。当然我们还可以丰富二维码：<br>    from MyQR import myqr<br>    myqr.run(<br>    words=’<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">http://www.baidu.com&#39;</a>,    # 包含信息<br>    picture=’lbxx.jpg’,              # 背景图片<br>    colorized=True,                  # 是否有颜色，如果为False则为黑白<br>    save_name=’code.png’             # 输出文件名<br>    )<br>另外MyQR还支持动态图片。</p>
+<h4 id="1-生成二维码"><a href="#1-生成二维码" class="headerlink" title="1 生成二维码"></a>1 生成二维码</h4><p>二维码作为一种信息传递的工具，在当今社会发挥了重要作用。而生成一个二维码也非常简单，在Python中我们可以通过MyQR模块了生成二维码，而生成一个二维码我们只需要2行代码，我们先安装MyQR模块，这里选用国内的源下载。<br>    <code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ myqr</code><br>安装完成后我们就可以开始写代码了：<br>    <code>from MyQR import myqr    # 注意大小写
+    myqr.run(words=&#39;http://www.baidu.com&#39;)    # 如果为网站则会自动跳转，文本直接显示，不支持中文</code><br>我们执行代码后会在项目下生成一张二维码。当然我们还可以丰富二维码：<br>    <code>from MyQR import myqr
+    myqr.run(
+    words=&#39;http://www.baidu.com&#39;,    # 包含信息
+    picture=&#39;lbxx.jpg&#39;,              # 背景图片
+    colorized=True,                  # 是否有颜色，如果为False则为黑白
+    save_name=&#39;code.png&#39;             # 输出文件名
+    )</code><br>另外MyQR还支持动态图片。</p>
 <h4 id="2-生成词云"><a href="#2-生成词云" class="headerlink" title="2 生成词云"></a>2 生成词云</h4><p>词云是数据可视化的一种非常优美的方式，我们通过词云可以很直观的看出一些词语出现的频率高低。使用Python我们可以通过wordcloud模块生成词云，我们先安装wordcloud模块：<br>    pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a> wordcloud<br>然后我们就可以写代码了：<br>    from wordcloud import WordCloud<br>    wc = WordCloud()    # 创建词云对象<br>    wc.generate(‘Do not go gentle into that good night’)    # 生成词云<br>    wc.to_file(‘wc.png’)    # 保存词云<br>当然这只是最简单的词云，词云更详细的操作可以参见WordCloud生成卡卡西忍术词云</p>
 <h4 id="批量抠图"><a href="#批量抠图" class="headerlink" title="批量抠图"></a>批量抠图</h4><p>抠图的实现需要借助百度飞桨的深度学习工具paddlepaddle，我们需要安装两个模块就可以很快的实现批量抠图了，第一个是PaddlePaddle：<br>    python -m pip install paddlepaddle -i <a href="https://mirror.baidu.com/pypi/simple" target="_blank" rel="noopener">https://mirror.baidu.com/pypi/simple</a><br>还有一个是paddlehub模型库：<br>    pip install -i <a href="https://mirror.baidu.com/pypi/simple" target="_blank" rel="noopener">https://mirror.baidu.com/pypi/simple</a> paddlehub<br>更详细的安装事项可以参见飞桨官网：<a href="https://www.paddlepaddle.org.cn/" target="_blank" rel="noopener">https://www.paddlepaddle.org.cn/</a><br>接下来我们只需要5行代码就能实现批量抠图<br>    import os, paddlehub as hub<br>    humanseg = hub.Module(name=’deeplabv3p_xception65_humanseg’)        # 加载模型<br>    path = ‘D:/CodeField/Workplace/PythonWorkplace/GrapImage/‘    # 文件目录<br>    files = [path + i for i in os.listdir(path)]    # 获取文件列表<br>    results = humanseg.segmentation(data={‘image’:files})    # 抠图</p>
 <div align=center>
@@ -2230,7 +2237,7 @@
 <h4 id="6-简易信息轰炸"><a href="#6-简易信息轰炸" class="headerlink" title="6 简易信息轰炸"></a>6 简易信息轰炸</h4><p>Python控制输入设备的方式有很多种，我们可以通过win32或者pynput模块。我们可以通过简单的循环操作来达到信息轰炸的效果，这里以pynput为例，我们需要先安装模块：<br>    pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a> pynput<br>在写代码之前我们需要手动获取输入框的坐标：<br>    from pynput import mouse<br>    # 创建一个鼠标<br>    m_mouse = mouse.Controller()<br>    # 输出鼠标位置<br>    print(m_mouse.position)<br>可能有更高效的方法，但是我不会。<br>获取后我们就可以记录这个坐标，消息窗口不要移动。然后我们执行下列代码并将窗口切换至消息页面：<br>    import time<br>    from pynput import mouse, keyboard<br>    time.sleep(5)<br>    m_mouse = mouse.Controller()    # 创建一个鼠标<br>    m_keyboard = keyboard.Controller()  # 创建一个键盘<br>    m_mouse.position = (850, 670)       # 将鼠标移动到指定位置<br>    m_mouse.click(mouse.Button.left) # 点击鼠标左键<br>    while(True):<br>        m_keyboard.type(‘你好’)        # 打字<br>        m_keyboard.press(keyboard.Key.enter)    # 按下enter<br>        m_keyboard.release(keyboard.Key.enter)    # 松开enter<br>        time.sleep(0.5)    # 等待 0.5秒</p>
 <div align=center>
 
-<p><img src="/img/hongza.png" alt=""></p>
+<p><img src="/img/hongzha.png" alt=""></p>
 </div>
 
 
