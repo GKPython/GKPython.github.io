@@ -3874,4 +3874,43 @@
         <tag>感悟</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Tkinter组件位置</title>
+    <url>/2020/05/19/pagePythonTkinterPos/</url>
+    <content><![CDATA[<h4 id="1-最小界面组成"><a href="#1-最小界面组成" class="headerlink" title="1.最小界面组成"></a>1.最小界面组成</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入tkinter模块</span><br><span class="line">import tkinter</span><br><span class="line"># 创建主窗口对象</span><br><span class="line">root &#x3D; tkinter.Tk()</span><br><span class="line"># 设置窗口大小(最小值：像素)</span><br><span class="line">root.minsize(300,300)</span><br><span class="line"># 设置初始化界面大小</span><br><span class="line">root.geometry(&#39;300x400&#39;)</span><br><span class="line"># 创建一个按钮组件</span><br><span class="line">btn &#x3D; tkinter.Button(root,text &#x3D; &#39;屠龙宝刀，点击送&#39;)</span><br><span class="line">btn.pack()</span><br><span class="line"># 加入消息循环</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-组件的摆放方式："><a href="#2-组件的摆放方式：" class="headerlink" title="2.组件的摆放方式："></a>2.组件的摆放方式：</h4><p>1.pack()方式 -&gt;方向/方位摆放方法</p>
+<p>2.grid()方式 -&gt;网格摆放方法</p>
+<p>3.place()方式 -&gt;定位摆放方法</p>
+<div align=center>
+
+<p><img src="/img/PythonPos.png" alt=""></p>
+</div>
+
+<h4 id="3-pack布局介绍"><a href="#3-pack布局介绍" class="headerlink" title="3.pack布局介绍"></a>3.pack布局介绍</h4><p>pack()方式：</p>
+<p>side 设置组件相对于父组件的摆放位置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入tkinter模块</span><br><span class="line">import tkinter</span><br><span class="line"># 创建主窗口对象</span><br><span class="line">root &#x3D; tkinter.Tk()</span><br><span class="line"># 设置窗口大小(最小值：像素)</span><br><span class="line">root.minsize(500,500)</span><br><span class="line"># 创建一个按钮组件</span><br><span class="line">btn0 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line"># 默认上边或 side &#x3D; &#39;top&#39;</span><br><span class="line">btn0.pack()</span><br><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line"># 下面</span><br><span class="line">btn1.pack(side &#x3D; &#39;bottom&#39;)</span><br><span class="line">btn2 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line"># 左边</span><br><span class="line">btn2.pack(side &#x3D; &#39;left&#39;)</span><br><span class="line">btn3 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line"># 右边</span><br><span class="line">btn3.pack(side &#x3D; &#39;right&#39;)</span><br><span class="line"># 加入消息循环</span><br><span class="line">root.mainloop()</span><br><span class="line"></span><br><span class="line">ipadx，ipady 设置组件的内部间距</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">btn0 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line"># 设置按钮中文字到边缘的间距</span><br><span class="line">btn0.pack(ipadx &#x3D; 20,ipady &#x3D; 20)</span><br><span class="line"></span><br><span class="line">padx，pady 设置多个组件外部间距</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">btn0 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line"># padx设置组件外部左右间距，pady设置组件外部上下间距</span><br><span class="line">btn0.pack(padx &#x3D; 20,pady &#x3D; 20)</span><br><span class="line"></span><br><span class="line">fill 设置按钮站一行或者一列</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;屠龙宝刀点击就送！&#39;)# 该组件站水平方向的最大位</span><br><span class="line"></span><br><span class="line">expand 设置side是否失效</span><br><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;屠龙宝刀点击就送！&#39;)</span><br><span class="line"># yes时side失效，按钮位于窗口中间，按钮占用所有水平和垂直的空间，此时fill &#x3D; both 按钮站全部空间</span><br><span class="line">btn1.pack(expand &#x3D; &#39;yes&#39;,fill &#x3D; &#39;both&#39;)</span><br><span class="line">注意：仅仅使用pack无法实现表格方式，必须借助Franme组件才可以实现，非常复杂。</span><br><span class="line"></span><br><span class="line">grid()方式:</span><br><span class="line"></span><br><span class="line">row　　设置行数 默认为0</span><br><span class="line"></span><br><span class="line">column　　设置列数 默认为0</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;	</span><br><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line">btn1.grid()</span><br><span class="line">btn2 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line">btn2.grid(row &#x3D; 1,column &#x3D; 1)# 设置按钮位置</span><br><span class="line">btn3 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮3&#39;)</span><br><span class="line">btn3.grid(row &#x3D; 0,column &#x3D; 1)</span><br></pre></td></tr></table></figure>
+
+<p>rowspan　　设置跨行数量</p>
+<p>cloumnspan　　设置跨列数量</p>
+<p>ipadx，ipady　　设置组件内部间距</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line">btn1.grid()</span><br><span class="line">btn2 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line">btn2.grid(row &#x3D; 1,column &#x3D; 0)# 设置按钮位置</span><br><span class="line">btn2 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line">btn2.grid(row &#x3D; 0,column &#x3D; 2,rowspan &#x3D; 2,ipady &#x3D; 15)</span><br><span class="line">btn2 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮2&#39;)</span><br><span class="line">btn2.grid(row &#x3D; 2,column &#x3D; 0,columnspan &#x3D; 3,ipadx &#x3D; 20)</span><br></pre></td></tr></table></figure>
+<p>place()方式：</p>
+<p>绝对定位布局：</p>
+<p>x　　设置距离左上角的水平长度　　单位都是像素</p>
+<p>y　　设置距离左上角的垂直高度　　单位都是像素</p>
+<p>width　　设置组件所占据的宽度　　单位都是像素</p>
+<p>height　　设置组件所占据的高度　　单位都是像素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">btn &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮&#39;)</span><br><span class="line"># 位置距离左边100像素，距离上边20像素</span><br><span class="line">btn.place(x &#x3D; 100,y &#x3D; 20)</span><br><span class="line">btn1 &#x3D; tkinter.Button(root,text &#x3D; &#39;按钮1&#39;)</span><br><span class="line"># 设置按钮的宽度和高度</span><br><span class="line">btn1.place(x &#x3D; 100,y &#x3D; 100,width &#x3D; 100,height &#x3D; 100)</span><br></pre></td></tr></table></figure>
+<p>相对定位布局：</p>
+<p>relx　　设置距离左上角的水平长度　　取值（0-1）</p>
+<p>rely　　设置距离左上角的垂直高度　　取值（0-1）　</p>
+<p>relwidth　　设置组件所占据的宽度　　取值（0-1）</p>
+<p>relheight　　设置组件所占据的高度　　取值（0-1）</p>
+<p>以上属性设置都是相对于界面宽度或者高度的百分比，可以更具界面的大小的改变而改变~！<br>禁止同时使用两种摆放方式</p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
 </search>
