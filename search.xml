@@ -5547,9 +5547,11 @@
     <title>vim使用</title>
     <url>/2020/06/08/pagelinux-vim/</url>
     <content><![CDATA[<p>编写过linux平台的程序，但主要是通过QT编译，运行。<br>一直没有使用过vim，今天抽空使用了下vim感觉蛮好，优点：1）清爽，速度快；2）不断使用命令，控制的感觉真好。当然也有缺点，缺点就是需记命令。以下是学习旅程。</p>
-<h4 id="第一步-环境"><a href="#第一步-环境" class="headerlink" title="第一步 环境"></a>第一步 环境</h4><p>unbuntu上自带的vim不太好用，所以通过以下两个命令卸载并重新安装。<br>‘’’sudo apt-get remove vim-common<br>sudo apt-get install vim’’’</p>
+<h4 id="第一步-环境"><a href="#第一步-环境" class="headerlink" title="第一步 环境"></a>第一步 环境</h4><p>unbuntu上自带的vim不太好用，所以通过以下两个命令卸载并重新安装。</p>
+<p>‘’’sudo apt-get remove vim-common<br>sudo apt-get install vim’’’</p>
 <h4 id="第二步-学习"><a href="#第二步-学习" class="headerlink" title="第二步 学习"></a>第二步 学习</h4><p>学习资料主要是鸟哥的linux私房菜（第三版）<br><strong>为啥要学vim？</strong><br>1）所有的Unix Like系统都会内建vi文本编辑器，其他的文本编辑器则不一定存在；<br>2）很多软件的编辑接口都会主动呼叫vi；<br>3）vim具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计；<br>4）以内程序简单，编辑速度相当快速<br><strong>vi的三种模式</strong><br>1）一般模式：以vi打开一个档案就直接进入一般模式了（这是模式的模式）这个模式中，可以使用“上下左右”按键移动光标，也可以使用“删除字符”或“删除整行”来处理档案内存，可以使用“复制、粘贴”处理文件数据。<br>2）编辑模式：在一般模式中可以进行删除、复制、贴上等等动作，但是却无法编辑文件内容。要等到你按下“i，I，O,o，A，a，r，R”等任何一个字母进行编辑模式。通常画面左下方会出现”INSERT或REPLACE“字样。而要回到一般模式，则按下”Esc“可以退出编辑模式。<br>3）指令模式：在一般模式当中，输入“：/?”三个任何一个按钮，就可以将光标移动到最底下哪一行。这个模式中，可以提供搜索、读取、存储等操作。<br>以下是学到的几个命令：<br><strong>vi指令</strong><br>以下是学习到的几个指令：<br>1）i进入编辑模式<br>2）:wq存储后离开vi<br>3）:set nu显示行号<br>4）nG 跳到第n行，40加右箭头 条状到该行第40个字符，G文件最后一行，1G文件第一行<br>5）/bizp2 搜索“bizp2”<br>6）：50,100s/man/MAN/gc 替换50行到100行之间的man为MAN<br>9）u 撤销<br>10）nyy从光标处复制n行，p则粘贴<br>11）ndd从光标处删除n行<br>12）nx从光标处删除n个字符</p>
-<h4 id="第三部-实践"><a href="#第三部-实践" class="headerlink" title="第三部 实践"></a>第三部 实践</h4><p>学些了vim基础命令，第一个事就是想写个Hello wrold，如下<br>1)vim hello.cpp<br>创建hello.cpp文件<br>2）键入i，进入编辑模式<br>3）编写hello.cpp文件<br>4）Esc键，退出编辑模式；然后shift+：然后wq，保存退出。<br>5）编译hello.cpp,g++ hello.cpp<br>6) 键入/.a.out，运行程序<br>7）在Terminal上显示“Hello World！”</p>
+<h4 id="第三部-实践"><a href="#第三部-实践" class="headerlink" title="第三部 实践"></a>第三部 实践</h4><p>学些了vim基础命令，第一个事就是想写个Hello wrold，如下</p>
+<p>1) vim hello.cpp<br>创建hello.cpp文件<br>2）键入i，进入编辑模式<br>3）编写hello.cpp文件<br>4）Esc键，退出编辑模式；然后shift+：然后wq，保存退出。<br>5）编译hello.cpp,g++ hello.cpp<br>6) 键入/.a.out，运行程序<br>7）在Terminal上显示“Hello World！”</p>
 <div align=center>
 
 <p><img src="/img/linuxvim.png" alt=""></p>
