@@ -4,11 +4,6 @@ db.json
 *.log
 node_modules/
 public/
-<<<<<<< HEAD
-.deploy*/
-=======
 .deploy*/
 .bak
 _config.yml
-
->>>>>>> fa372eb98a467f97dc6b239c1c4ab4544edd6647
