@@ -1,5 +1,16 @@
 ---
-title: pageshuangqizhendaoke
+title: 影评-双旗镇刀客
 date: 2020-06-17 13:52:37
-tags:
+tags: 感悟
 ---
+
+有点《正午》的影子，凶恶当前，众人噤声，鸡鸣狗盗之徒沽名钓誉，真正的义士慷慨赴死。
+
+黄沙飞舞，粗狂、浑厚、男人味儿十足又不乏细腻感。故事简单，但绝对中国电影史上的明珠。
+
+
+<div align=center>
+
+![](/img/shuangqizhendaoke.jpg)
+
+</div>
