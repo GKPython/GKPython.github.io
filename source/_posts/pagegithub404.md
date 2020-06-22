@@ -9,7 +9,7 @@ tags: 技术
 
 然后都做了些什么呢？
 1 检查所有的配置，没有发现问题；
-2 本地部署，hexo s，使用localhost：4000正常，不可以；
+2 本地部署，hexo s，使用localhost：4000正常；
 3 等待24小时，依然不可以。
 
 进一步调查，有了新的发现：
@@ -17,8 +17,7 @@ tags: 技术
 
 最终是怎么解决的呢？
 1 点击Change theme
-2点击 change theme 之后底下有个link-to-another-pages ，然后再选用主题就好了，这样可以跳转到你用hexo部署的界面
-下面有两个主题1）默认的yay还有一个back，改成back
+2 点击 change theme 之后底下有个link-to-another-pages ，然后再选用主题就好了，这样可以跳转到你用hexo部署的界面下面有两个主题1）默认的yay还有一个back，改成back
 3 然后回来选项都有了，填上自己的域名，然后将Enforce HTTPS 也选上了。
 再试一切OK。
 
