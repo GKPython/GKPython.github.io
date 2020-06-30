@@ -1,5 +1,5 @@
 ---
-title: pagewujunboshiyueduyuxiazuo-guowaipian
+title: 吴军阅读与写作课（鉴赏-国外篇）
 date: 2020-06-30 13:57:41
-tags:
+tags: 感悟
 ---
