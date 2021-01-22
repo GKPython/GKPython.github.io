@@ -10321,4 +10321,9 @@
 <p>最后呢，突然发现在服务器对应的仓库下面有一个hook，然后建立了pre-revprop-change.bat，运行一切OK。<br>if “%4” == “svn:log” exit 0 echo Property ‘%4’ cannot be changed &gt;&amp;2 exit 1</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>pagegeliriqi</title>
+    <url>/2021/01/22/pagegeliriqi/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
