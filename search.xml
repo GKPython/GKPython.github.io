@@ -10297,7 +10297,7 @@
     <title>现在的大学生怎么了？</title>
     <url>/2020/11/22/pagexianzaidebiyeshengzenmele/</url>
     <content><![CDATA[<p>近期一直在面试各种大学生,简直让人大跌眼镜。</p>
-<p>各种问题：<br>1）什么基础知识都一问三不知，真不知道大学里是怎么过的？<br>2）自己做的东西都一问三不知，包括毕业设计也是，真不知道是怎么毕业的？<br>3）没有基础的纪律性，说不来就不来，说就迟到就迟到。<br>为什么大家都喜欢招聘好大学的毕业生，素质还是不可同日而语。<br>觉得高校还是有必要对自己的学生做做培训，不要干啥都两眼一抹黑。</p>
+<p>各种问题：<br>1）什么基础知识都一问三不知，操作系统、数据结构、数据库等等，真不知道大学里是怎么过的？<br>2）自己做的东西都一问三不知，包括毕业设计也是，真不知道是怎么毕业的？<br>3）没有基础的纪律性，说不来就不来，说就迟到就迟到。<br>为什么大家都喜欢招聘好大学的毕业生，素质还是不可同日而语。<br>觉得高校还是有必要对自己的学生做做培训，不要干啥都两眼一抹黑。</p>
 ]]></content>
   </entry>
   <entry>
@@ -10306,8 +10306,17 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>pagesvnlog</title>
+    <title>svn log修改</title>
     <url>/2020/12/10/pagesvnlog/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>尴尬至极，发现自己昨天提交了一个svn日志“修改抬头纹贴”，想想好像是中午搜怎么修复额头上的川字纹，作为一个大老爷们，又是团队Leader，让组员看见了岂不是影响形象。<br>然后网上搜，说是可以在服务器端可以修改。但是根本没有界面。</p>
+<div align=center>
+
+<p><img src="/img/svn-log.jpg" alt=""></p>
+</div>
+
+
+<p>然后想了一种办法，建立一个分支，把原先的分支删掉，但存在一个问题，一些提交历史消失。</p>
+<p>最后呢，突然发现在服务器对应的仓库下面有一个hook，然后建立了pre-revprop-change.bat，运行一切OK。<br>if “%4” == “svn:log” exit 0 echo Property ‘%4’ cannot be changed &gt;&amp;2 exit 1</p>
+]]></content>
   </entry>
 </search>
