@@ -99,7 +99,7 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://GKPython: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@github.com/GKPython/GKPython.github.io.git
+  repo: https://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@github.com/GKPython/GKPython.github.io.git
   branch: master  
   
 jsonContent:
